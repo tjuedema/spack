@@ -580,6 +580,12 @@ def extract_tarball(spec, filename, allow_root=False, unsigned=False,
     # and any relocation has been done.
     else:
         install_tree(workdir, spec.prefix, symlinks=True)
+        manifest_file = os.path.join(spec.prefix,
+                                     spack.store.layout.metadata_dir,
+                                     spack.store.layout.manifest_file_name)
+        if not os.path.exists(manifest_file):
+            spec_id = spec.format('{name}/{hash:7}')
+            tty.warn('No manifest file in tarball for spec %s' % spec_id)
     finally:
         shutil.rmtree(tmpdir)
 
