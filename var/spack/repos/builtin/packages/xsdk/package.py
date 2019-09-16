@@ -160,7 +160,7 @@ class Xsdk(BundlePackage):
     depends_on('py-libensemble@0.5.2+petsc4py', when='@0.5.0 +libensemble')
 
     depends_on('precice@develop +petsc', when='@develop +precice')
-    depends_on('precice@develop +petsc', when='@0.5.0 +precice')
+    depends_on('precice@1.6.1 +petsc', when='@0.5.0 +precice')
 
     depends_on('butterflypack@master', when='@develop +butterflypack')
     depends_on('butterflypack@1.0.3', when='@0.5.0 +butterflypack')
