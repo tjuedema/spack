@@ -4508,5 +4508,6 @@ class SpecDependencyNotFoundError(SpecError):
     """Raised when a failure is encountered writing the dependencies of
     a spec."""
 
+
 class SpecDeprecatedError(SpecError):
     """Raised when a spec concretizes to a deprecated spec or dependency."""
